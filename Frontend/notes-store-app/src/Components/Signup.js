@@ -1,21 +1,54 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation,useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form"
+import axios from "axios";
+import toast from 'react-hot-toast';
 
 const Signup = ({ mode }) => {
+
+
+    const location = useLocation();
+    const navigate=useNavigate();
+    const from = location.state?.from?.pathname || '/';
+
+
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm()
+    } = useForm();
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = async (data) => {
+        const userInfo = {
+            fullname: data.fullname,
+            email: data.email,
+            password: data.password,
+        }
+        await axios.post("http://localhost:5001/user/signup", userInfo)
+            .then((res) => {
+                console.log(res.data);
+                if (res.data) {
+                    toast.success('"Signup Successfully"!');
+                    navigate(from,{replace:true});
+                    localStorage.setItem("Users", JSON.stringify(res.data.user));
+                }
+            }).catch((err) => {
+                if (err.response) {
+                    console.log(err);
+                    toast.error("Error: " + err.response.data.message);
+                }
+            });
+    };
+
+
 
     const inputStyle = {
         outline: 'none',
         fontWeight: '500',
         border: '1px solid'
     }
+
+
     return (
         <div className={`bg-${mode} text-${mode === 'light' ? 'dark' : 'light'}`}>
             <div style={{ height: '100vh' }} className="container align-items-center d-flex justify-content-center">
@@ -36,9 +69,9 @@ const Signup = ({ mode }) => {
                                             className={`w-100 form-control px-3 shadow-none bg-${mode === 'light' ? 'light' : 'secondary'} text-${mode === 'light' ? 'dark' : 'light'}`}
                                             placeholder='Enter your fullname'
                                             style={inputStyle}
-                                            {...register("name", { required: true })}
+                                            {...register("fullname", { required: true })}
                                         />
-                                        {errors.name && <span className='text-danger'>*This name is required</span>}
+                                        {errors.fullname && <span className='text-danger'>*This name is required</span>}
                                     </div>
 
                                     <div className='py-2 px-3'>

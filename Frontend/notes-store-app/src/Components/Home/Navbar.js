@@ -5,9 +5,13 @@ import darkImg from "../../images/dark.png";
 import lightImg from "../../images/light.png";
 import Login from '../Login';
 import Button from 'react-bootstrap/Button';
-
+import Logout from '../Logout';
+import { useAuth } from '../../Context/AuthProvider';
 
 const Navbar = ({ toggleMode, mode }) => {
+
+    const [authuser, setAuthuser] = useAuth()
+
     const [modalShow, setModalShow] = React.useState(false);
     return (
         <nav className={`navbar sticky-top navbar-expand-lg navbar-${mode} bg-${mode}`}>
@@ -51,24 +55,28 @@ const Navbar = ({ toggleMode, mode }) => {
                     </ul>
                     <form className="d-flex" role="search">
                         <div className="input-group mx-2">
-                            <input type="text" style={{ border: '1px solid',outline:'none' }} className={`form-control bg-${mode === 'light' ? 'light' : 'secondary'} text-${mode === 'light' ? 'dark' : 'light'}`} placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                            <input type="text" style={{ border: '1px solid', outline: 'none' }} className={`form-control bg-${mode === 'light' ? 'light' : 'secondary'} text-${mode === 'light' ? 'dark' : 'light'}`} placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" />
                             <span className={`input-group-text bg-${mode} text-${mode === 'light' ? 'dark' : 'light'}`} style={{ border: '1px solid', cursor: 'pointer' }} id="basic-addon2"><IoSearch /></span>
                         </div>
                         <button className={`btn btn-outline-${mode === 'light' ? 'dark' : 'light'} bg-${mode} text-${mode === 'light' ? 'dark' : 'light'} mx-2`} onClick={toggleMode} type="button">
                             <img style={{ width: '30px' }} src={mode === 'light' ? darkImg : lightImg} alt="" />
                         </button>
-                        <div className="">
-                            
-                            <Button style={{padding:'10px 12px',fontWeight:'500'}} variant="outline-success" onClick={() => setModalShow(true)}>
-                                Login
-                            </Button>
 
-                            <Login
-                                show={modalShow}
-                                mode={mode}
-                                onHide={() => setModalShow(false)}
-                            />
-                        </div>
+                        {
+                            authuser ? <Logout /> :
+                                <div className="">
+
+                                    <Button style={{ padding: '10px 12px', fontWeight: '500' }} variant="outline-success" onClick={() => setModalShow(true)}>
+                                        Login
+                                    </Button>
+
+                                    <Login
+                                        show={modalShow}
+                                        mode={mode}
+                                        onHide={() => setModalShow(false)}
+                                    />
+                                </div>
+                        }
                     </form>
                 </div>
             </div>

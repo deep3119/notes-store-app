@@ -2,12 +2,19 @@ import './App.css';
 import { useState, useEffect, React } from 'react';
 import Home from './Components/Home/Home';
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Courses from './Components/Courses/Courses';
 import Signup from './Components/Signup';
 
+import { Toaster } from 'react-hot-toast';
+import { useAuth } from './Context/AuthProvider';
+
 
 function App() {
+
+  const [authuser, setAuthuser]=useAuth();
+  console.log(authuser);
+
   const [mode, setMode] = useState(() => {
     const savedMode = localStorage.getItem('theme');
     return savedMode ? savedMode : 'light';
@@ -32,9 +39,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home mode={mode} toggleMode={toggleMode} />} />
-        <Route path="/Course" element={<Courses mode={mode} toggleMode={toggleMode} />} />
+        <Route path="/Course" element={authuser?<Courses mode={mode} toggleMode={toggleMode} />:<Navigate to="/signup"/>} />
         <Route path="/Signup" element={<Signup mode={mode} toggleMode={toggleMode} />} />
       </Routes>
+      <Toaster />
     </>
   );
 }

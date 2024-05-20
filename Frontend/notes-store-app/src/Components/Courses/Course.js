@@ -1,10 +1,27 @@
-import React from 'react'
-import list from '../list.json';
+import React, { useEffect, useState } from 'react'
+// import list from '../list.json';
 import Cards from '../Home/Cards.js';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 const Course = ({ mode }) => {
-  const allData = list;
+  const [note, setNote] = useState([]);
+  useEffect(() => {
+    const getNote = async () => {
+      try {
+
+        const response = await axios.get("http://localhost:5001/note");
+        console.log(response.data);
+        setNote(response.data);
+      }
+      catch (error) {
+        console.log(error)
+      }
+    }
+    getNote();
+  }, []);
+  // const allData = list;
+  const allData = note;
   return (
     <>
       <div className={`container my-3 text-${mode === 'light' ? 'dark' : 'light'}`}>

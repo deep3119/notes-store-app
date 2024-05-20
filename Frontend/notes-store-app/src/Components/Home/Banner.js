@@ -21,7 +21,7 @@ const Banner=({mode}) =>{
                                 </div>
                                 <input style={{border:'1px solid'}} type="text" className={`form-control bg-${mode==='light'?'light':'secondary'} text-${mode==='light'?'dark':'light'}`} placeholder="Enter your email to login" aria-label="" aria-describedby="basic-addon1" />
                             </div>
-                            <button type="button" style={{backgroundColor:'#d63384' , fontWeight : '500'}} className={`btn my-3 text-${mode==='light'?'light':'light'}`}>Secondary</button>
+                            <button type="button" style={{backgroundColor:'#d63384' , fontWeight : '500'}} className={`btn my-3 text-${mode==='light'?'light':'light'}`}>Get Started</button>
                         </div>
                     </div>
                     <div className="right col w-100  md-w-50">

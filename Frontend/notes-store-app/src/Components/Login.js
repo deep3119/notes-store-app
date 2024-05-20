@@ -2,15 +2,43 @@ import React from 'react'
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import axios from 'axios';
+
+import toast from 'react-hot-toast';
+
 
 const Login = (props) => {
     const {
         register,
         handleSubmit,
         formState: { errors },
-      } = useForm()
-    
-      const onSubmit = (data) => console.log(data)
+    } = useForm()
+
+    const onSubmit = async (data) => {
+        const userInfo = {
+            email: data.email,
+            password: data.password,
+        }
+        await axios.post("http://localhost:5001/user/login", userInfo)
+            .then((res) => {
+                console.log(res.data);
+                if (res.data) {
+                    toast.success('Login Successfully!');
+                    setTimeout(() => {
+                        localStorage.setItem("Users", JSON.stringify(res.data.user));
+                        window.location.reload();
+                    }, 1000);
+                }
+            }).catch((err) => {
+                if (err.response) {
+                    console.log(err);
+                    toast.error("Error: " + err.response.data.message);
+                    setTimeout(() => {
+                        
+                    }, 2000);
+                }
+            });
+    }
     return (
         <div className=''>
             <Modal
@@ -48,7 +76,7 @@ const Login = (props) => {
                                     placeholder='Enter your Password'
                                     {...register("password", { required: true })}
                                     style={{ outline: 'none' }} />
-                                    {errors.password && <span className='text-danger'>*This password is required</span>}
+                                {errors.password && <span className='text-danger'>*This password is required</span>}
                                 <br />
                             </div>
 
