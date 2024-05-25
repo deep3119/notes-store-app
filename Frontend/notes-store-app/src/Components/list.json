@@ -1,58 +1,182 @@
 [
     {
-        "id":1,
-        "name":"Story book",
-        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-        "price":"Free",
-        "categeroy":"Free",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1715962366~exp=1715965966~hmac=8b2f169e3230673aa9e6600251e9ace8cd1b0f21e87054403fe8daabf4d5a181&w=740"
+        "id": 1,
+        "name": "React JS Notes",
+        "title": "React is a free and open-source front-end JavaScript library for building user interfaces based on components.",
+        "price": 50,
+        "categeroy": "Free",
+        "image": "Logo/React_JS.png",
+        "file": "Files/REACT.pdf",
+        "link": "https://react.dev/learn"
     },
     {
-        "id":2,
-        "name":"Comedy book",
-        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-        "price":20,
-        "categeroy":"Entertenment",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1715962366~exp=1715965966~hmac=8b2f169e3230673aa9e6600251e9ace8cd1b0f21e87054403fe8daabf4d5a181&w=740"
+        "id": 2,
+        "name": "Node JS Notes",
+        "title": "Node.js is a cross-platform, open-source JavaScript runtime environment.",
+        "price": 50,
+        "categeroy": "Free",
+        "image": "Logo/Node_js.png",
+        "file": "Files/NODE.pdf",
+        "link": "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs"
     },
     {
-        "id":3,
-        "name":"Sports book",
-        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-        "price":15,
-        "categeroy":"Sports",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1715962366~exp=1715965966~hmac=8b2f169e3230673aa9e6600251e9ace8cd1b0f21e87054403fe8daabf4d5a181&w=740"
+        "id": 3,
+        "name": "Express JS Notes",
+        "title": "Express.js, or simply Express, is a back end web application framework for building RESTful APIs with Node.js.",
+        "price": 50,
+        "categeroy": "Free",
+        "image": "Logo/Express_js.png",
+        "file": "Files/EXPRESS.pdf",
+        "link": "https://expressjs.com/en/starter/installing.html"
     },
     {
-        "id":4,
-        "name":"Music book",
-        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-        "price":32,
-        "categeroy":"Free",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1715962366~exp=1715965966~hmac=8b2f169e3230673aa9e6600251e9ace8cd1b0f21e87054403fe8daabf4d5a181&w=740"
+        "id": 4,
+        "name": "Data Base Management System Notes",
+        "title": "MySQL is an open-source relational database management system. ",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/mysql.png",
+        "file": "Files/DBMS.pdf",
+        "link": "https://dev.mysql.com/doc/"
     },
     {
-        "id":5,
-        "name":"Story book",
-        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-        "price":"Free",
-        "categeroy":"Free",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1715962366~exp=1715965966~hmac=8b2f169e3230673aa9e6600251e9ace8cd1b0f21e87054403fe8daabf4d5a181&w=740"
+        "id": 5,
+        "name": "Data Communication Networking",
+        "title": "Data communication process transfer data from one place to another.",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/DCN.png",
+        "file": "Files/DCN.pdf",
+        "link": "https://www.sunbirddcim.com/network-documentation"
     },
     {
-        "id":6,
-        "name":"Story book",
-        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-        "price":"Free",
-        "categeroy":"Free",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1715962366~exp=1715965966~hmac=8b2f169e3230673aa9e6600251e9ace8cd1b0f21e87054403fe8daabf4d5a181&w=740"
+        "id": 6,
+        "name": "Microprocessor And Interfacing Techniques",
+        "title": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/MIT.png",
+        "file": "Files/MIT.pdf",
+        "link": "https://digilent.com/reference/learn/microprocessor/doc/start"
     },
     {
-        "id":7,
-        "name":"Story book",
-        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-        "price":"Free",
-        "categeroy":"Free",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1715962366~exp=1715965966~hmac=8b2f169e3230673aa9e6600251e9ace8cd1b0f21e87054403fe8daabf4d5a181&w=740"
+        "id": 7,
+        "name": "Operating System",
+        "title": "An operating system is the most important software that runs on a computer.",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/OS.png",
+        "file": "Files/OS.pdf",
+        "link": "https://en.wikipedia.org/wiki/Operating_system"
+    },
+    {
+        "id": 8,
+        "name": "Python Programming",
+        "title": "Python is a high-level, general-purpose programming language including structured, object-oriented.",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/Python.png",
+        "file": "Files/PYTHON.pdf",
+        "link": "https://docs.python.org/3/"
+    },
+    {
+        "id": 9,
+        "name": "PHP Programming",
+        "title": "PHP is a general-purpose scripting language geared towards web development.",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/php.png",
+        "file": "Files/PHP.pdf",
+        "link": "https://www.php.net/download-docs.php"
+    },
+    {
+        "id": 10,
+        "name": "Software Engineering",
+        "title": "Software engineering is the branch of computer science that deals with the design, development, testing, and maintenance of software applications.",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/Se.png",
+        "file": "Files/SE.pdf",
+        "link": "https://www.mtu.edu/cs/undergraduate/software/what/#:~:text=Software%20engineering%20is%20the%20branch,software%20solutions%20for%20end%20users."
+    },
+    {
+        "id": 11,
+        "name": "Data Structure",
+        "title": "In computer science, a data structure is a data organization, and storage format that is usually chosen for efficient access to data.",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/DS.png",
+        "file": "Files/DS.pdf",
+        "link": "https://www.geeksforgeeks.org/data-structures/"
+    },
+    {
+        "id": 12,
+        "name": "Management Skills",
+        "title": "Management skills are abilities and traits needed to perform certain duties, usually as it pertains to overseeing a team, such as solving problems.",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/MS.png",
+        "file": "Files/MS.pdf",
+        "link": "https://www.coursera.org/enterprise/articles/9-key-management-skills"
+    },
+    {
+        "id": 13,
+        "name": "Artificial Intelligence",
+        "title": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems.",
+        "price": 50,
+        "categeroy": "Free",
+        "image": "Logo/AI.png",
+        "file": "Files/AI.pdf",
+        "link": "https://www.techtarget.com/searchenterpriseai/definition/AI-Artificial-Intelligence#:~:text=Artificial%20intelligence%20is%20the%20simulation,speech%20recognition%20and%20machine%20vision."
+    },
+    {
+        "id": 14,
+        "name": "Machine Learning",
+        "title": "Machine learning (ML) is a field of study in artificial intelligence concerned with the development and study of statistical .",
+        "price": 50,
+        "categeroy": "Free",
+        "image": "Logo/ML.png",
+        "file": "Files/ML.pdf",
+        "link": "https://www.javatpoint.com/machine-learning"
+    },
+    {
+        "id": 15,
+        "name": "Deep Learning",
+        "title": "Deep learning is a subset of machine learning that uses multi-layered neural networks,to the complex decision-making power of the human brain.",
+        "price": 50,
+        "categeroy": "Free",
+        "image": "Logo/DL.png",
+        "file": "Files/DL.pdf",
+        "link": "https://www.ibm.com/topics/deep-learning#:~:text=Deep%20learning%20is%20a%20subset,AI)%20in%20our%20lives%20today."
+    },
+    {
+        "id": 16,
+        "name": "Java Programming",
+        "title": "Java is a high-level, class-based, object-oriented programming language.",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/Java.png",
+        "file": "Files/JAVA.pdf",
+        "link": "https://www.javatpoint.com/java-tutorial"
+    },
+    {
+        "id": 17,
+        "name": "Android Development",
+        "title": "Android operating system is the largest installed base among various mobile platforms across the globe.",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/AD.png",
+        "file": "Files/ANDROID.pdf",
+        "link": "https://developer.android.com/reference/org/w3c/dom/Document"
+    },
+    {
+        "id": 18,
+        "name": "iPhone Operating System",
+        "title": "iOS is a mobile operating system developed by Apple Inc. exclusively for its smartphones.",
+        "price": "Free",
+        "categeroy": "Free",
+        "image": "Logo/IOS.png",
+        "file": "Files/IOS.pdf",
+        "link": "https://developer.apple.com/documentation/"
     }
-]   
+]

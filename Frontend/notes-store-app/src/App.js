@@ -8,9 +8,12 @@ import Signup from './Components/Signup';
 
 import { Toaster } from 'react-hot-toast';
 import { useAuth } from './Context/AuthProvider';
+import Contacts from './Components/Contact/Contacts';
 
 
 function App() {
+
+  const localhost = `192.168.1.73`;
 
   const [authuser, setAuthuser]=useAuth();
   console.log(authuser);
@@ -38,9 +41,10 @@ function App() {
 
 
       <Routes>
-        <Route path="/" element={<Home mode={mode} toggleMode={toggleMode} />} />
-        <Route path="/Course" element={authuser?<Courses mode={mode} toggleMode={toggleMode} />:<Navigate to="/signup"/>} />
-        <Route path="/Signup" element={<Signup mode={mode} toggleMode={toggleMode} />} />
+        <Route path="/" element={<Home mode={mode} toggleMode={toggleMode} localhost={localhost}/>} />
+        <Route path="/Course" element={authuser?<Courses mode={mode} toggleMode={toggleMode} localhost={localhost} />:<Navigate to="/signup"/>} />
+        <Route path="/Contact" element={<Contacts mode={mode} toggleMode={toggleMode} localhost={localhost} />} />
+        <Route path="/Signup" element={<Signup mode={mode} toggleMode={toggleMode} localhost={localhost}/>} />
       </Routes>
       <Toaster />
     </>

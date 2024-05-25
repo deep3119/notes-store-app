@@ -4,12 +4,12 @@ import Footer from '../Home/Footer';
 import Course from './Course';
 
 
-const Courses=({mode ,toggleMode})=> {
+const Courses=({mode ,toggleMode , localhost})=> {
     
     return (
         <>
             <Navbar mode={mode} toggleMode={toggleMode}/>
-            <Course mode={mode}/>
+            <Course mode={mode} localhost={localhost}/>
             <Footer mode={mode}/>
         </>
     )

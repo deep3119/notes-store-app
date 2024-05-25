@@ -5,6 +5,7 @@ import cors from "cors";
 
 import noteRoute from "./route/note.route.js";
 import userRoute from "./route/user.route.js";
+import contactRoute from "./route/contact.route.js";
 const app = express();
 
 app.use(cors());
@@ -37,6 +38,7 @@ try {
 
 app.use("/note", noteRoute);
 app.use("/user", userRoute);
+app.use("/contact", contactRoute);
 
 app.listen(PORT, () => {
   console.log(`Servering is listening on port ${PORT}`)

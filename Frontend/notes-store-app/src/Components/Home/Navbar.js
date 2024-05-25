@@ -8,9 +8,10 @@ import Button from 'react-bootstrap/Button';
 import Logout from '../Logout';
 import { useAuth } from '../../Context/AuthProvider';
 
-const Navbar = ({ toggleMode, mode }) => {
+const Navbar = ({ toggleMode, mode ,localhost}) => {
 
     const [authuser, setAuthuser] = useAuth()
+
 
     const [modalShow, setModalShow] = React.useState(false);
     return (
@@ -33,7 +34,7 @@ const Navbar = ({ toggleMode, mode }) => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/">
+                            <a className="nav-link" aria-current="page" href="/">
                                 Home
                             </a>
                         </li>
@@ -43,7 +44,7 @@ const Navbar = ({ toggleMode, mode }) => {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <a className="nav-link" href="/contact">
                                 Contact
                             </a>
                         </li>
@@ -72,6 +73,7 @@ const Navbar = ({ toggleMode, mode }) => {
 
                                     <Login
                                         show={modalShow}
+                                        localhost={localhost}
                                         mode={mode}
                                         onHide={() => setModalShow(false)}
                                     />

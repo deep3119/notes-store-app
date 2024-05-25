@@ -6,15 +6,15 @@ import Slider from "react-slick";
 import Cards from './Cards';
 import axios from "axios";
 
-const Freebook = ({mode}) => {
+const Freebook = ({mode , localhost}) => {
 
   const [note, setNote] = useState([]);
   useEffect(() => {
     const getNote = async () => {
       try {
 
-        const response = await axios.get("http://localhost:5001/note");
-        const data = response.data.filter((data) => data.categeroy === "Free");
+        const response = await axios.get(`http://${localhost}:5001/note`);
+        const data = response.data.filter((data) => data.price === 50);
         setNote(data);
         console.log(data);
       }
@@ -67,9 +67,9 @@ const Freebook = ({mode}) => {
     <>
       <div className={`container my-5 text-${mode === 'light' ? 'dark' : 'light'}`}>
         <div>
-          <h5>Free Offered Courses</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit quo,
-            sint alias sequi harum nemo cumque corporis quia magni illum.</p>
+          <h3>Free Offered Courses</h3>
+          <h5>Eat Sleep <span style={{color:'#d63384'}}>Learn</span> Repeat</h5>
+          <p>To get all Courses in our Course option. click on the Course option and get our all Fantastic Course And all Course are Freely Available.</p>
         </div>
         <div>
           <Slider {...settings}>

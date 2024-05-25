@@ -7,19 +7,20 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 
-const Login = (props) => {
+const Login = (props ,localhost) => {
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm()
 
+
     const onSubmit = async (data) => {
         const userInfo = {
             email: data.email,
             password: data.password,
         }
-        await axios.post("http://localhost:5001/user/login", userInfo)
+        await axios.post(`http://${props.localhost}:5001/user/login`, userInfo)
             .then((res) => {
                 console.log(res.data);
                 if (res.data) {
@@ -84,7 +85,7 @@ const Login = (props) => {
 
                             <div className='py-2 d-flex justify-content-between align-items-center'>
                                 <button style={{ fontWeight: '500' }} type='submit' className='btn px-3 btn-outline-success'>Login</button>
-                                <p className='p-0 m-0'>Not registerd? <Link to={'/Signup'}>Signup</Link></p>
+                                <p className='p-0 m-0'>Not registerd? <Link to={'/Signup'} localhost={localhost}>Signup</Link></p>
                             </div>
                         </div>
                     </form>
