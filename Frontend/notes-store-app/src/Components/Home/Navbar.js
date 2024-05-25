@@ -7,18 +7,19 @@ import Login from '../Login';
 import Button from 'react-bootstrap/Button';
 import Logout from '../Logout';
 import { useAuth } from '../../Context/AuthProvider';
+import logo from '../../images/logo.png';
 
-const Navbar = ({ toggleMode, mode ,localhost}) => {
+const Navbar = ({ toggleMode, mode, localhost }) => {
 
     const [authuser, setAuthuser] = useAuth()
 
 
     const [modalShow, setModalShow] = React.useState(false);
     return (
-        <nav className={`navbar sticky-top navbar-expand-lg navbar-${mode} bg-${mode}`}>
+        <nav className={`navbar p-0 m-0 sticky-top navbar-expand-lg navbar-${mode} bg-${mode}`}>
             <div className="container">
                 <a className="navbar-brand" href="#">
-                    Notes Store
+                    <img style={{width: '90px',height: '60px',margin: '0',padding: '0'}} src={logo}></img>
                 </a>
                 <button
                     className="navbar-toggler"
