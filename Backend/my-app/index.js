@@ -20,14 +20,13 @@ const URI = process.env.MongoDBURI;
 // connect to mongo db
 try {
 
-  mongoose.connect(URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
-  app.get('/', (req, res) => {
-    res.send('Connected to mongoDB')
-  });
-
+  mongoose.connect(URI)
+    .then(() => {
+      console.log("MongoDB connected successfully");
+    })
+    .catch((error) => {
+      console.error("MongoDB connection error:", error);
+    });
 } catch (error) {
 
   console.log("Error", error);

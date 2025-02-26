@@ -13,7 +13,9 @@ import Contacts from './Components/Contact/Contacts';
 
 function App() {
 
-  const localhost = `192.168.1.73`;
+  // const localhost = `192.168.1.73`;
+  const localhost = 'localhost';
+
 
   const [authuser, setAuthuser]=useAuth();
   console.log(authuser);

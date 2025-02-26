@@ -12,7 +12,7 @@ const Freebook = ({mode , localhost}) => {
   useEffect(() => {
     const getNote = async () => {
       try {
-
+        console.log(localhost)
         const response = await axios.get(`http://${localhost}:5001/note`);
         const data = response.data.filter((data) => data.price === 50);
         setNote(data);
